@@ -1,0 +1,118 @@
+{
+  "name": "q-applet--imap",
+  "displayName": "IMAP",
+  "version": "1.0.0",
+  "description": "Notifies when an email arrived",
+  "longDescription": "Notifies when an email arrived",
+  "officialProductName": "",
+  "appUrl": "",
+  "publisher": "denk-mal",
+  "isSingleton": false,
+  "videoUrl": "",
+  "icon": "assets/icon.png",
+  "image": "assets/q-applet-imap-image.png",
+  "authorName": "denk-mal",
+  "authorUrl": "https://github.com/denk-mal",
+  "issuesUrl": "https://github.com/denk-mal/daskeyboard-applet--imap/issues",
+  "homePageUrl": "https://github.com/denk-mal/daskeyboard-applet--imap",
+  "developerRepoUrl": "https://github.com/denk-mal/daskeyboard-applet--imap",
+  "licenseUrl": "https://github.com/denk-mal/daskeyboard-applet--imap/blob/master/LICENSE",
+  "changelogUrl": "CHANGELOG.md",
+  "readMeUrl": "README.md",
+  "readMeEndUserUrl": "README_ENDUSER.md",
+  "license": "MIT",
+  "dependencies": {
+    "daskeyboard-applet": "^2.11.4",
+    "imap-simple": "latest"
+  },
+  "engines": {
+    "das-keyboard-q": "3.2.3"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Test?  What test?  No tests here\""
+  },
+  "qConfig": {
+    "geometry": {
+      "width": 1,
+      "height": 1
+    },
+    "applet": {
+      "defaults": {}
+    },
+    "questions": [
+      {
+        "key": "imapserver",
+        "label": "Enter imap server name",
+        "help": "This ist the IMAP Server for the account to check for.",
+        "required": true,
+        "order": 1,
+        "controlType": "textbox"
+      },
+      {
+        "key": "username",
+        "label": "Enter imap user name",
+        "help": "This ist the username for the account to check for.",
+        "required": true,
+        "order": 2,
+        "controlType": "textbox"
+      },
+      {
+        "key": "password",
+        "label": "Enter imap password",
+        "help": "This ist the password for the account to check for.",
+        "required": true,
+        "order": 3,
+        "controlType": "textbox"
+      },
+      {
+        "key": "boxname",
+        "label": "Enter imap folder",
+        "help": "This ist the imap folder to check for. (default: INBOX)",
+        "required": false,
+        "order": 4,
+        "controlType": "textbox"
+      },
+      {
+        "key": "check_interval",
+        "label": "check intervall",
+        "help": "Check Intervall in seconds. default (60 sec.)",
+        "required": false,
+        "order": 5,
+        "controlType": "textbox"
+      },
+      {
+        "key": "onColor",
+        "label": "Key lock on",
+        "help": "If key lock is on color will be displayed.",
+        "required": false,
+        "order": 6,
+        "value": "#0000FF",
+        "controlType": "color"
+      },
+      {
+        "key": "reminderEffect",
+        "label": "Choose the effect of the reminder",
+        "help": "",
+        "required": true,
+        "order": 7,
+        "value": "BLINK",
+        "controlType": "effect"
+      },
+      {
+        "key": "offColor",
+        "label": "Key lock off",
+        "help": "If key lock is off color will be displayed.",
+        "required": false,
+        "order": 8,
+        "value": "#000000",
+        "controlType": "color"
+      }
+    ],
+    "requirements": {
+      "applet": {
+        "imapserver": "string"
+      }
+    }
+  }
+}
